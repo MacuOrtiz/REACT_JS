@@ -3,12 +3,11 @@ import { ProductsList } from "./components/pages/productos/productos";
 
 function App() {
   return (
-    <>
+    <div className="app-container">
       <Navbarpage />
-
-      <h1>Macu´s Recipies</h1>
+      <h1 className="centered-heading">Macu´s Recipies</h1>
       <ProductsList />
-    </>
+    </div>
   );
 }
 
