@@ -1,0 +1,7 @@
+export const ProductsList = () => {
+  return (
+    <div>
+      <h2>aqui van los productos</h2>;
+    </div>
+  );
+};
