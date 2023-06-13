@@ -1,25 +1,37 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav } from "react-bootstrap";
 import { BsCart4 } from "react-icons/bs";
+import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Narbarpage = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="justify-content-end mr-auto">
-          <Nav.Link href="#inicio">Inicio</Nav.Link>
-          <Nav.Link href="#acerca">Acerca</Nav.Link>
-          <Nav.Link href="#servicios">Servicios</Nav.Link>
-          <Nav.Link href="#contacto" className="justify-content-end mr-auto">
-            Contacto
-          </Nav.Link>
-          <Nav.Link>
-            <BsCart4 size="35px" />
-          </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <>
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav>
+            <Link className="nav-link" to="/inicio">
+              Inicio
+            </Link>
+            <Link className="nav-link" to="/contacto">
+              Contacto
+            </Link>
+            <Link className="nav-link" to="/products">
+              Productos
+            </Link>
+            <Link className="nav-link" to="/detalle">
+              Detalle
+            </Link>
+            <Link className="ms-auto" to="/count">
+              <BsCart4 size="35px" color="yellow" />
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      <Outlet />
+    </>
   );
 };
 
