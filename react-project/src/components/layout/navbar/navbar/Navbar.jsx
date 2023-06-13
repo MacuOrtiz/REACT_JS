@@ -11,7 +11,7 @@ const Narbarpage = () => {
       <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
+          <Nav className="me-auto">
             <Link className="nav-link" to="/inicio">
               Inicio
             </Link>
@@ -24,7 +24,9 @@ const Narbarpage = () => {
             <Link className="nav-link" to="/detalle">
               Detalle
             </Link>
-            <Link className="ms-auto" to="/count">
+          </Nav>
+          <Nav>
+            <Link className="nav-link" to="/count">
               <BsCart4 size="35px" color="yellow" />
             </Link>
           </Nav>
