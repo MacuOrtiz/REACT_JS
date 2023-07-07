@@ -35,3 +35,7 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+button {
+  padding: 5px;
+  margin: 5px;
+}

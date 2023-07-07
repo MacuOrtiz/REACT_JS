@@ -1,5 +1,6 @@
 import { products } from "../produclist/productMock";
 import "./Produclist.css";
+import { Link } from 'react-router-dom';
 const ProducList = () => {
   return (
     <div className="product-list">
@@ -14,7 +15,9 @@ const ProducList = () => {
           />
           <p>{product.description}</p>
           <p>${product.price}</p>
-          <button className="buy-button">Detalle</button>
+          <Link to={`/product/${product.id}`} className="buy-button">
+            Detalle
+          </Link>
         </div>
       ))}
     </div>

@@ -21,8 +21,8 @@ const Narbarpage = () => {
             <Link className="nav-link" to="/products">
               Productos
             </Link>
-            <Link className="nav-link" to="/detalle">
-              Detalle
+            <Link className="nav-link" to="/formulario">
+              Formulario
             </Link>
           </Nav>
           <Nav>

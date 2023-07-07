@@ -1,16 +1,18 @@
+// ProductoDetailContainer.js
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ProductoDetail from "./ProductoDetail";
 import { products } from "../../produclist/productMock";
 
 const ProductoDetailContainer = () => {
   const [productoSelected, setProductoSelected] = useState({});
+  const { id } = useParams(); 
 
-  let id = 2;
 
   useEffect(() => {
     let productFind = products.find((product) => product.id === id);
 
-    const getProduct = new Promise((res, rej) => {
+    const getProduct = new Promise((res) => {
       res(productFind);
     });
 
@@ -21,7 +23,7 @@ const ProductoDetailContainer = () => {
 
   console.log(productoSelected);
 
-  return <ProductoDetail producto={productoSelected} />;
+  return <ProductoDetail productoSelected={productoSelected} />; // Se pasa la prop como 'productoSelected'
 };
 
 export default ProductoDetailContainer;

@@ -8,7 +8,7 @@ export const products = [
 
     stock: 20,
 
-    description: "un tour a una de las lagunas mas hermosas el Ecuador",
+    description: "Un tour a una de las lagunas mas hermosas el Ecuador",
 
     category: "Montaña media",
 
@@ -24,7 +24,7 @@ export const products = [
 
     stock: 25,
 
-    description: "una expetiencia unica",
+    description: "Una expetiencia unica",
 
     category: "Montaña media",
 
