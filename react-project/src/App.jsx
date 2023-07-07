@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/layout/navbar/navbar/Navbar";
-import { menuRoutes } from "./router/menu.routes";
+import { menuRoutes } from "./router/RoutesMenu";
 import CartContextProvider from "./context/CartContext";
 
 
