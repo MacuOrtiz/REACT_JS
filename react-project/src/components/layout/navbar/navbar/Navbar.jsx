@@ -24,6 +24,9 @@ const Narbarpage = () => {
             <Link className="nav-link" to="/formulario">
               Formulario
             </Link>
+            <Link className="nav-link" to="/formulario">
+              Formulario
+            </Link>
           </Nav>
           <Nav>
             <Link className="nav-link" to="/count">
