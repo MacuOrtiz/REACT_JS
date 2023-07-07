@@ -26,11 +26,10 @@ export const menuRoutes = [
     path: "count",
     Element: ItemCount,
   },
-  {
-    id: "detalleProductos",
-    path: "detalle",
-    Element: ProductoDetailContainer,
-  },
+
+  { id: "producto", 
+  path: "/product/:id", 
+  Element: ProductoDetailContainer },
   {
     id: "formularios",
     path: "formulario",

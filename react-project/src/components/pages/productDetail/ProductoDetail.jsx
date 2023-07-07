@@ -1,5 +1,11 @@
 
+
 const ProductoDetail = ({ productoSelected }) => {
+  // Si productoSelected es undefined o un objeto vacío, muestra un mensaje de carga
+  if (!productoSelected || Object.keys(productoSelected).length === 0) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <h2>{productoSelected.title}</h2>

@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/layout/navbar/navbar/Navbar";
 import { menuRoutes } from "./router/RoutesMenu";
-import CartContextProvider from "./context/CartContext";
+
 
 
 function App() {
   return (
     <BrowserRouter>
-    <CartContextProvider>
+
       <Navbar />
       <Routes>
         {menuRoutes.map(({ id, path, Element }) => (
@@ -15,7 +15,7 @@ function App() {
         ))}
         <Route path="*" element={<h1>404 No Found </h1>} />
       </Routes>
-      </CartContextProvider>
+      
     </BrowserRouter>
   );
 }
