@@ -4,6 +4,7 @@ import FetchingDeDatosCointainer from "../components/pages/fetchingDeDatos/Fetch
 import ItemCount from "../components/common/counter/itemCount";
 import ProductoDetailContainer from "../components/pages/productDetail/ProductoDetailContainer";
 import Formulario from "../components/pages/Formulario/Formulario";
+import CartContainer from "../components/pages/cart/CartContainer";
 
 export const menuRoutes = [
   {
@@ -24,12 +25,14 @@ export const menuRoutes = [
   {
     id: "carrito",
     path: "count",
-    Element: ItemCount,
+    Element: CartContainer,
   },
 
   { id: "producto", 
   path: "/product/:id", 
   Element: ProductoDetailContainer },
+
+  
   {
     id: "formularios",
     path: "formulario",

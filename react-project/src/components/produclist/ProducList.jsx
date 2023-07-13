@@ -13,7 +13,7 @@ const ProducList = () => {
         <img src={product.img} alt={product.title} className="product-image" />
         <p>{product.description}</p>
         <p>${product.price}</p>
-        <Link to={`/detalle/${product.id}`} className="buy-button">
+        <Link to={`/product/${product.id}`} className="buy-button">
           Detalle
         </Link>
       </div>

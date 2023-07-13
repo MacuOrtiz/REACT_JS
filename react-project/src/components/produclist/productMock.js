@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: 1,
+    id:1,
 
     title: "Tour Laguna del Quilotoca",
 
@@ -16,7 +16,7 @@ export const products = [
   },
 
   {
-    id: 2,
+    id:2,
 
     title: "Tour paso del Inca",
 
@@ -32,7 +32,7 @@ export const products = [
   },
 
   {
-    id: 3,
+    id:3,
 
     title: "Tour Ruco Pichincha",
 
@@ -48,7 +48,7 @@ export const products = [
   },
 
   {
-    id: 4,
+    id:4,
 
     title: "Tour Cumbre Cotopaxi",
 
