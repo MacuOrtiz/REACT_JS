@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProductoDetail from "./ProductoDetail";
 import { products } from "../../produclist/productMock";
@@ -7,9 +7,16 @@ import { CartContext } from "../../../context/CartContext";
 const ProductoDetailContainer = () => {
   const [productoSelected, setProductoSelected] = useState({});
 
-  const {agregarAlCarrito}= useContext (CartContext)
+  const { agregarAlCarrito, getTotalProduct } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    agregarAlCarrito(productoSelected, cantidad); // Pasa la cantidad como segundo argumento
+  };
 
   const { id } = useParams();
+
+  const cantidad = getTotalProduct(id);
+  console.log(cantidad);
 
   useEffect(() => {
     console.log("ID del producto:", id);
@@ -18,7 +25,9 @@ const ProductoDetailContainer = () => {
     console.log("Producto encontrado:", productFind);
 
     const getProduct = new Promise((res) => {
-      res(productFind);
+      setTimeout(() => {
+        res(productFind);
+      }, 2000);
     });
 
     getProduct
@@ -31,8 +40,13 @@ const ProductoDetailContainer = () => {
 
   console.log("Estado productoSelected:", productoSelected);
 
-  return <ProductoDetail productoSelected={productoSelected} agregarAlCarrito={agregarAlCarrito} />;
+  return (
+    <ProductoDetail
+      cantidad={cantidad}
+      productoSelected={productoSelected}
+      agregarAlCarrito={agregarAlCarrito}
+    />
+  );
 };
 
 export default ProductoDetailContainer;
-

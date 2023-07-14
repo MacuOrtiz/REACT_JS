@@ -1,7 +1,7 @@
 import useCount from "../../../hooks/useCount";
 
 function MyComponent() {
-  const { count, añadir, eliminar } = useCount(1, 5);
+  const { count, añadir, eliminar } = useCount(1, 25);
 
   return (
     <div>
