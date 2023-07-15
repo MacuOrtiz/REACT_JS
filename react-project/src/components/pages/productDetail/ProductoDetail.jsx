@@ -46,32 +46,29 @@ const ProductoDetail = ({ productoSelected, cantidad }) => {
           {productoSelected.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          <p>{productoSelected.category}</p>
-          <p> {productoSelected.description}</p>
-          <p> Precio del Tour: ${productoSelected.price}</p>
-          <p>Numero de Personas: {count}</p>
+          {productoSelected.category}
+          <br />
+          {productoSelected.description}
+          <br />
+          Precio del Tour: ${productoSelected.price}
+          <br />
+          Numero de Personas: {count}
         </Typography>
       </CardContent>
       <CardActions>
-
-        <Button variant="outlined" startIcon={<DeleteIcon />} onClick={eliminar}>
-          Quitar
-        </Button>
         <Button variant="contained" endIcon={<SendIcon />} onClick={añadir}>
           Añadir
         </Button>
-
-
-
+        <Button variant="outlined" startIcon={<DeleteIcon />} onClick={eliminar}>
+          Quitar
+        </Button>
       </CardActions>
-
       <div>
-       
         <Button variant="text" onClick={handleAddToCart}>Agregar al Carrito</Button>
       </div>
       <div>
         <Link color="inherit" className="nav-link" to="/count">
-          <span variant="text" >Ir a Carro</span>
+          <span variant="text">Ir a Carro</span>
           <BsCart4 size="35px" color="yellow" />
         </Link>
       </div>
@@ -80,3 +77,4 @@ const ProductoDetail = ({ productoSelected, cantidad }) => {
 }
 
 export default ProductoDetail;
+
