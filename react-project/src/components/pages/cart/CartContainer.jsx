@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import useCount from "../../../hooks/useCount";
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
+
 
 const CartContainer = () => {
   const { cart, clearCart, deleteProduct } = useContext(CartContext);
@@ -51,6 +53,7 @@ const CartContainer = () => {
                 >
                   Eliminar Tour
                 </button>
+
               </div>
             </div>
           </div>
@@ -61,7 +64,14 @@ const CartContainer = () => {
         <Button variant="contained" color="secondary" onClick={clearCart}>
           Limpiar carrito
         </Button>
+        <Link to="/checkout">
+          <Button variant="contained" color="secondary">
+            Finalizar Compra
+          </Button>
+        </Link>
+
       </div>
+
       <h2 className="text-center mt-4">Total: $ {getTotal()}</h2>
     </div>
   );

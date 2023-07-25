@@ -5,6 +5,7 @@ import ItemCount from "../components/common/counter/itemCount";
 import ProductoDetailContainer from "../components/pages/productDetail/ProductoDetailContainer";
 import Formulario from "../components/pages/Formulario/Formulario";
 import CartContainer from "../components/pages/cart/CartContainer";
+import CheckoutContainer from "../components/pages/Checkout/CheckoutContainer";
 
 export const menuRoutes = [
   {
@@ -38,4 +39,9 @@ export const menuRoutes = [
     path: "formulario",
     Element: Formulario,
   },
+  {
+    id: "checkout",
+    path: "checkout",
+    Element: CheckoutContainer,
+  }
 ];
