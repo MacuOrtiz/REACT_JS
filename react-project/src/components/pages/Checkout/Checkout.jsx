@@ -1,9 +1,10 @@
+import CheckoutContainer from "./CheckoutContainer"
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../src/firebaseConfig";
 
-const CheckoutContainer = () => {
+const Checkout = () => {
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -15,7 +16,7 @@ const CheckoutContainer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validar la edad del usuario (debe ser mayor de 18 años)
+  
     const edad = parseInt(formData.edad, 10);
     if (edad < 18) {
       alert("Debes ser mayor de 18 años para continuar.");
@@ -43,7 +44,7 @@ const CheckoutContainer = () => {
     }));
   };
 
-  return (
+   return (
     <div>
       <h1>Completa el formulario</h1>
       <form onSubmit={handleSubmit}>
@@ -64,4 +65,4 @@ const CheckoutContainer = () => {
   );
 };
 
-export default CheckoutContainer;
+export default Checkout

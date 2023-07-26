@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
-import useCount from "../../../hooks/useCount";
+import useCount from "../../../hooks/useCount"
+
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
@@ -9,11 +10,13 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 
 const CartContainer = () => {
-  const { cart, clearCart, deleteProduct } = useContext(CartContext);
+  const { cart, clearCart, deleteProduct, getTotalProduct } = useContext(
+    CartContext
+  );
 
   const getTotal = () => {
     return cart.reduce((total, producto) => {
-      const { count } = useCount(producto.cantidad, producto.stock);
+      const count = getTotalProduct(producto.id);
       const subTotal = producto.price * count;
       return total + subTotal;
     }, 0);
@@ -34,39 +37,37 @@ const CartContainer = () => {
         const subTotal = producto.price * count;
 
         return (
-          <Card key={producto.id} className="mb-3">
-            <CardContent>
+          <div key={producto.id} className="card mb-3">
+            <div className="card-body">
               <img
                 src={producto.img}
                 alt={producto.title}
                 className="product-thumbnail"
-                style={{ width: "150px", marginBottom: "1rem" }}
+                style={{ width: "150px" }}
               />
-              <Typography variant="h5" component="h2">
-                {producto.title}
-              </Typography>
-              <Typography variant="subtitle1" color="text.secondary">
-                ${producto.price}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Numero de Personas: {count}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Subtotal: $ {subTotal}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button onClick={añadir}>+</Button>
-              <Button onClick={eliminar}>-</Button>
-              <Button
-                variant="contained"
-                color="error"
-                onClick={() => deleteProduct(producto.id)}
-              >
-                Eliminar Tour
-              </Button>
-            </CardActions>
-          </Card>
+              <h2 className="card-title">{producto.title}</h2>
+              <h3 className="card-text">${producto.price}</h3>
+              <p className="card-text">Numero de Personas: {count}</p>
+              <button className="btn btn-primary me-2" onClick={añadir}>
+                +
+              </button>
+              <button className="btn btn-primary" onClick={eliminar}>
+                -
+              </button>
+              <div>
+                <p>Subtotal: $ {subTotal}</p>
+              </div>
+              <div>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => deleteProduct(producto.id)}
+                >
+                  Eliminar Tour
+                </button>
+
+              </div>
+            </div>
+          </div>
         );
       })}
 
@@ -79,6 +80,7 @@ const CartContainer = () => {
             Finalizar Compra
           </Button>
         </Link>
+
       </div>
 
       <h2 className="text-center mt-4">Total: $ {getTotal()}</h2>
@@ -87,4 +89,3 @@ const CartContainer = () => {
 };
 
 export default CartContainer;
-
